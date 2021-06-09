@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      function fn(a, c) {
+    console.log(a); // function a() {}
+    var a = 123; // 重新声明a变量
+    console.log(a); // 123, 逐行执行的结果
+
+    console.log(c); // function c() {}
+
+    function a() {} // 函数声明，会覆盖之前形参里a的变量声明
+    
+    if (false) {
+      var d = 678;
+    }
+    console.log(d); // undefined
+
+    console.log(b); // undefined
+    var b = function () {} // 匿名函数变量，不是函数声明
+    console.log(b); // function () {}
+
+    function c() {}
+    console.log(c); // function c() {}
+  }
+
+  fn(1, 2)
+  </script>
+</body>
+</html>
