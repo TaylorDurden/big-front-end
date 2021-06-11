@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BFC</title>
+  <style>
+    .father {
+      /* float: left; */
+      /* position: absolute; */
+      /* display: inline-block; */
+      /* display: flex; */
+      overflow: hidden; /*一般用这个最好*/
+    }
+    .son {
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+      float: left;
+    }
+
+    .parent {
+      width: 200px;
+      height: 300px;
+      background-color: cyan;
+      overflow: hidden;
+    }
+    .child {
+      width: 100px;
+      height: 100px;
+      background-color: darkcyan;
+      margin-top: 20px;
+    }
+
+    .p {}
+
+    .s {
+      width: 200px;
+      height: 200px;
+      background-color: brown;
+      float: left;
+    }
+
+    .s-last {
+      width: 200px;
+      height: 300px;
+      background-color: burlywood;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h3>不设置father div的样式时，father div是没有宽高的，因为son div都float left了</h3>
+  <div class="father">
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+  </div>
+  <a href="">百度</a>
+
+  <br />
+
+  <h3>解决margin塌陷</h3>
+
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+
+  <br />
+
+  <h3>阻止元素被浮动元素覆盖</h3>
+  <div>
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s-last"></div>
+  </div>
+
+</body>
+</html>
